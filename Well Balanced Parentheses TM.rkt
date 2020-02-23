@@ -8,7 +8,7 @@
    (such as images or comment boxes).
 
             http://racket-lang.org/
-|#
+|# 
  33 7 #"wxtext\0"
 3 1 6 #"wxtab\0"
 1 1 8 #"wximage\0"
