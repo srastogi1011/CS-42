@@ -1,6 +1,6 @@
 #lang racket
 ;;; Machine Simulator
-;;; Author: Robert Keller
+;;; Author: Sidhant Rastogi
 ;;; Date: 7 October 2019
 
 ;;; Enumerate all strings accepted by a machine up to a specified length
@@ -17,19 +17,16 @@
   (let ((inputs (enumerate-to length alphabet)))
     (map (lambda (input) (list (sim machine input) input)) inputs)))
 
-;***MODIFIED
 (define (nice-first l)
   (if (empty? l)
       '(b)
       (first l)))
 
-;***MODIFIED
 (define (nice-rest l)
   (if (empty? l)
       '(b)
       (rest l)))
 
-;***MODIFIED
 ;;; General machine simulator
 (define (sim machine input)
   (let ((machine-type (nice-first machine)))
@@ -50,7 +47,6 @@
           (sim-fsa-loop transitions initial accepting input))
         (mk-error "errors: " errors))))
 
-;***MODIFIED
 ;;; Turing machine specific simulator, top-level
 (define (sim-tm machine-parts input)
   (let ((errors (check-validity-tm machine-parts)))
@@ -79,7 +75,6 @@
      (if transitions empty '((no transitions))))))
 
 
-;***MODIFIED
 ;;; Check the validity of a TM specification, returning a list of errors.
 ;;; If there are no errors, an empty list will be returned.
 (define (check-validity-tm machine-parts)
@@ -122,7 +117,6 @@
                   (let ((next-state (second col)))         ;; Get the next state and continue
                     (sim-fsa-loop transitions next-state accepting (nice-rest input)))))))))
 
-;***MODIFIED
 ;;; Simulate a Turing machine given machine parts.
 (define (sim-tm-loop transitions current-state accepting rejecting blank left-tape right-tape)
   (cond
