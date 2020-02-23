@@ -1,7 +1,7 @@
 (module unicalc-db racket
 
 ;; Define database db for Unicalc
-;; by Robert Keller
+;; by Sidhant Rastogi
 ;;
 ;; Version 2019 October 29
 
