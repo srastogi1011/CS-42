@@ -1,4 +1,4 @@
-#lang racket
+#lang racket 
 
 (define (knapsack capacity items)
   (cond ((empty? items) (list 0 0 empty))
